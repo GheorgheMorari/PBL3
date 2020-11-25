@@ -17,6 +17,7 @@
         android:gravity="center"
         android:padding="16dp">
 
+
         <TextView
             android:id="@+id/choosing_question"
             android:layout_width="match_parent"
@@ -28,75 +29,70 @@
             android:text="Question will be here"
             />
 
-        <TextView
-            android:id="@+id/chose_option_one"
+        <Button
+            android:id="@+id/btn_option_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corners"
             android:text="Strongly agree"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             >
-        </TextView>
+        </Button>
 
-        <TextView
-            android:id="@+id/chose_option_two"
+        <Button
+            android:id="@+id/btn_option_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corners"
             android:text="Agree"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             >
-        </TextView>
+        </Button>
 
-        <TextView
-            android:id="@+id/chose_option_three"
+        <Button
+            android:id="@+id/btn_option_three"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corners"
             android:text="Disagree"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             >
-        </TextView>
+        </Button>
 
-        <TextView
-            android:id="@+id/chose_option_four"
+        <Button
+            android:id="@+id/btn_option_four"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corners"
             android:text="Strongly disagree"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             >
-        </TextView>
+        </Button>
 
-        <TextView
-            android:id="@+id/chose_option_five"
+        <Button
+            android:id="@+id/btn_option_five"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corners"
             android:text="Neutral"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             >
-        </TextView>
+        </Button>
 
 
         <Button
