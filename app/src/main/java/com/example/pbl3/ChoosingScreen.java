@@ -16,6 +16,12 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 public class ChoosingScreen extends Fragment {
 
+    //TODO FOR CERLAT PACLIC
+    //Todo Display next question using DisplayInteraction.getNextQuestion();
+    //TODO Answer the question using DisplayInteraction.selectOption(question,button value);
+    //TODO pass the value parameter to the selectOption() as DisplayInteraction.agree
+    //TODO IMPLEMENT SWITCHING TO ENDSCREEN WHEN guess.confidence >= 0.80f;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
