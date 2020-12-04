@@ -1,5 +1,6 @@
 package com.example.pbl3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import static com.example.pbl3.DisplayInteraction.guess;
+
 public class ChoosingScreen extends Fragment {
 
     //TODO FOR CERLAT PACLIC
@@ -39,6 +43,11 @@ public class ChoosingScreen extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(ChoosingScreen.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
+
+               if (guess.confidence >= 0.80f) {
+                   Intent myIntent = new Intent(view.getContext(), EndScreen.class);
+                  startActivityForResult(myIntent, 0);
+              }
             }
         });
     }
