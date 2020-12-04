@@ -25,7 +25,7 @@ public class ChoosingScreen extends Fragment {
     //TODO Answer the question using DisplayInteraction.selectOption(question,button value);
     //TODO pass the value parameter to the selectOption() as DisplayInteraction.agree
     //TODO IMPLEMENT SWITCHING TO ENDSCREEN WHEN guess.confidence >= 0.80f;
-
+    Question nextQuestion;
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -36,13 +36,17 @@ public class ChoosingScreen extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        nextQuestion = DisplayInteraction.getNextQuestion();
         super.onViewCreated(view, savedInstanceState);
 
         view.findViewById(R.id.btn_option_two).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ChoosingScreen.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.agree);
+
+                nextQuestion = DisplayInteraction.getNextQuestion();
+
+
 
                if (guess.confidence >= 0.80f) {
                    Intent myIntent = new Intent(view.getContext(), EndScreen.class);
