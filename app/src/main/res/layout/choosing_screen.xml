@@ -19,7 +19,7 @@
 
 
         <TextView
-            android:id="@+id/choosing_question"
+            android:id="@+id/choosing_screen_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -30,7 +30,7 @@
             />
 
         <Button
-            android:id="@+id/btn_option_one"
+            android:id="@+id/btn_strongly_agree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -43,7 +43,7 @@
         </Button>
 
         <Button
-            android:id="@+id/btn_option_two"
+            android:id="@+id/btn_agree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -56,7 +56,20 @@
         </Button>
 
         <Button
-            android:id="@+id/btn_option_three"
+            android:id="@+id/btn_neutral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_corners"
+            android:text="Neutral"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            >
+        </Button>
+
+        <Button
+            android:id="@+id/btn_disagree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -69,7 +82,7 @@
         </Button>
 
         <Button
-            android:id="@+id/btn_option_four"
+            android:id="@+id/btn_storngly_disagree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -81,18 +94,6 @@
             >
         </Button>
 
-        <Button
-            android:id="@+id/btn_option_five"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_corners"
-            android:text="Neutral"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            >
-        </Button>
 
 
 
