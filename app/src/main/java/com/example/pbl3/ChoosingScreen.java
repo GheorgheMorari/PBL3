@@ -36,21 +36,20 @@ public class ChoosingScreen extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        nextQuestion = DisplayInteraction.getNextQuestion();
+        //nextQuestion = DisplayInteraction.getNextQuestion();
         super.onViewCreated(view, savedInstanceState);
 
         view.findViewById(R.id.btn_option_two).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.agree);
+               // DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.agree);
 
-                nextQuestion = DisplayInteraction.getNextQuestion();
+               // nextQuestion = DisplayInteraction.getNextQuestion();
 
 
 
+                   NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
                if (guess.confidence >= 0.80f) {
-                   Intent myIntent = new Intent(view.getContext(), EndScreen.class);
-                  startActivityForResult(myIntent, 0);
               }
             }
         });

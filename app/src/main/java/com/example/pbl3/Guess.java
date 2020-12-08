@@ -57,7 +57,7 @@ class Guess extends Problem{
                 return i;
             }
         }
-        return -1;
+        return 0;
     }
     Distance getDistance(Problem problem){
         float dist = 0;

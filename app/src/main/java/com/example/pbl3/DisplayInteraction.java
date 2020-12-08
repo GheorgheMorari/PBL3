@@ -26,6 +26,7 @@ class DisplayInteraction {
 
     static Question getNextQuestion(){
         int bestId = guess.getBestId();
+
         return questionSet.questions.get(bestId);
     }
     static void selectOption(Question question, float value ){

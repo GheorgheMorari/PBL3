@@ -25,17 +25,17 @@ public class EndScreen extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.choosing_screen, container, false);
+        return inflater.inflate(R.layout.end_screen, container, false);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.btn_option_two).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.endscreen_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EndScreen.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_ThirtFragment_to_SecondFragment);
             }
         });
     }

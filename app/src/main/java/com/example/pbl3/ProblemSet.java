@@ -34,6 +34,4 @@ class ProblemSet{
     static Problem getProblem(int id){
         return problems.get(id);
     }
-
-
 }

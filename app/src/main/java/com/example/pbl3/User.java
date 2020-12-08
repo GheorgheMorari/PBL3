@@ -45,3 +45,8 @@ class User {
     }
 
 }
+
+
+//Http server java and http client
+//Sriu portul si ip-ul la server.
+//rest api library java
