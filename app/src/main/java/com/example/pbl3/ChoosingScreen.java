@@ -18,8 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.example.pbl3.DisplayInteraction.guess;
-import static com.example.pbl3.DisplayInteraction.questionSet;
-import static com.example.pbl3.QuestionSet.questions;
+import static com.example.pbl3.DisplayInteraction.getNextQuestion;
+
 
 
 public class ChoosingScreen extends Fragment {
@@ -39,32 +39,108 @@ public class ChoosingScreen extends Fragment {
             Bundle savedInstanceState
 
     ) {
-        mTextView = container.findViewById(R.id.choosing_screen_question);
-        ShowText();
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.choosing_screen, container, false);
     }
 
     public void ShowText(){
-        mTextView.setText( DisplayInteraction.getNextQuestion().visibleString);
+        mTextView.setText(  nextQuestion.visibleString);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
 
+        mTextView = view.findViewById(R.id.choosing_screen_question);
 
         nextQuestion = DisplayInteraction.getNextQuestion();
-
+        ShowText();
         super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.btn_strongly_agree
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+               DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.stronglyAgree);
+
+                ShowText();
+
+               nextQuestion = DisplayInteraction.getNextQuestion();
+
+                if (guess.confidence >= 0.80f)
+                    NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
+
+
+            }
+        });
+
 
         view.findViewById(R.id.btn_agree
         ).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShowText();
-               DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.agree);
 
-               nextQuestion = DisplayInteraction.getNextQuestion();
+                DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.agree);
+
+                ShowText();
+
+                nextQuestion = DisplayInteraction.getNextQuestion();
+
+                if (guess.confidence >= 0.80f)
+                    NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
+
+
+            }
+        });
+
+
+        view.findViewById(R.id.btn_neutral
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.neutral);
+
+                ShowText();
+
+                nextQuestion = DisplayInteraction.getNextQuestion();
+
+                if (guess.confidence >= 0.80f)
+                    NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
+
+
+            }
+        });
+
+
+        view.findViewById(R.id.btn_disagree
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.disagree);
+
+                ShowText();
+
+                nextQuestion = DisplayInteraction.getNextQuestion();
+
+                if (guess.confidence >= 0.80f)
+                    NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
+
+
+            }
+        });
+
+
+        view.findViewById(R.id.btn_storngly_disagree
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.stronglyDisagree);
+
+                ShowText();
+
+                nextQuestion = DisplayInteraction.getNextQuestion();
 
                 if (guess.confidence >= 0.80f)
                     NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
