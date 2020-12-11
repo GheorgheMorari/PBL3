@@ -55,23 +55,55 @@ public class ChoosingScreen extends Fragment {
         ShowText();
         super.onViewCreated(view, savedInstanceState);
 
+        view.findViewById(R.id.btn_strongly_agree
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choose(DisplayInteraction.stronglyAgree);
+            }
+        });
+
         view.findViewById(R.id.btn_agree
         ).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-               DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.agree);
-
-                ShowText();
-
-               nextQuestion = DisplayInteraction.getNextQuestion();
-
-                if (guess.confidence >= 0.80f)
-                    NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
-
-
+                choose(DisplayInteraction.agree);
             }
         });
+
+        view.findViewById(R.id.btn_neutral
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choose(DisplayInteraction.neutral);
+            }
+        });
+
+        view.findViewById(R.id.btn_disagree
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choose(DisplayInteraction.disagree);
+            }
+        });
+
+        view.findViewById(R.id.btn_storngly_disagree
+        ).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choose(DisplayInteraction.stronglyDisagree);
+            }
+        });
+    }
+
+    void choose(float answer){
+        DisplayInteraction.selectOption(nextQuestion,answer);
+
+        nextQuestion = DisplayInteraction.getNextQuestion();
+        ShowText();
+
+        if (guess.confidence >= 0.80f)
+            NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
     }
 
 }

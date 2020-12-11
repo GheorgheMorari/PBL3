@@ -19,7 +19,7 @@ class Guess extends Problem{
 
 
     Guess(){
-        super(NaN);
+        super(Float.NaN);
         possibleProblems = new PriorityQueue<Distance>(new SolutionComparator());
     }
     public void answer(int id, float value){
@@ -34,26 +34,28 @@ class Guess extends Problem{
             mostProbable = possibleProblems.peek().problem;
         } else {
             if(mostProbable == possibleProblems.peek().problem){
-                confidence += 1/5; //TODO change how the confidence is calculated
+                confidence += 1f/5f; //TODO change how the confidence is calculated
                 if(confidence > 1) {confidence = 1;};
 
             } else{
-                confidence -= 1/5;
+                confidence -= 1f/5f;
                 if(confidence < 0) {confidence = 0;};
             }
 
         }
     }
-    int getBestId(){
+    int getBestId(User user){
+        int questionMin = user.getQuestionMin();
+        if(mostProbable == null) return 0;
         for(int i = 0; i < questionsCount; i++){
-            if(this.questionAnswers[i] == NaN &&
-                    ((mostProbable.questionAnswers[i] == DisplayInteraction.stronglyAgree) ||
-                            (mostProbable.questionAnswers[i] == DisplayInteraction.stronglyDisagree))){
+            if(Float.isNaN(this.questionAnswers[i]) || user.questionViewed[i] == questionMin &&
+                ((mostProbable.questionAnswers[i] == DisplayInteraction.stronglyAgree) ||
+                (mostProbable.questionAnswers[i] == DisplayInteraction.stronglyDisagree))){
                 return i;
             }
         }
         for(int i = 0; i < questionsCount; i++){
-            if(this.questionAnswers[i] == NaN){
+            if(Float.isNaN(this.questionAnswers[i]) || user.questionViewed[i] == questionMin){
                 return i;
             }
         }
@@ -62,7 +64,7 @@ class Guess extends Problem{
     Distance getDistance(Problem problem){
         float dist = 0;
         for(int i = 0; i < questionsCount; i++){
-            if(this.questionAnswers[i] != NaN){
+            if(!Float.isNaN(this.questionAnswers[i])){
                 float diff = this.questionAnswers[i] - problem.questionAnswers[i];
                 dist += diff * diff;
             }
