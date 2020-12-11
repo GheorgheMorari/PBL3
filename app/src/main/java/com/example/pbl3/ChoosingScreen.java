@@ -60,15 +60,13 @@ public class ChoosingScreen extends Fragment {
             @Override
             public void onClick(View view) {
 
-               DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.stronglyAgree);
+                DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.stronglyAgree);
 
+                nextQuestion = DisplayInteraction.getNextQuestion();
                 ShowText();
-
-               nextQuestion = DisplayInteraction.getNextQuestion();
 
                 if (guess.confidence >= 0.80f)
                     NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
-
 
             }
         });
@@ -81,14 +79,11 @@ public class ChoosingScreen extends Fragment {
 
                 DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.agree);
 
-                ShowText();
-
                 nextQuestion = DisplayInteraction.getNextQuestion();
+                ShowText();
 
                 if (guess.confidence >= 0.80f)
                     NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
-
-
             }
         });
 
@@ -100,14 +95,12 @@ public class ChoosingScreen extends Fragment {
 
                 DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.neutral);
 
-                ShowText();
 
                 nextQuestion = DisplayInteraction.getNextQuestion();
+                ShowText();
 
                 if (guess.confidence >= 0.80f)
                     NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
-
-
             }
         });
 
@@ -119,9 +112,9 @@ public class ChoosingScreen extends Fragment {
 
                 DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.disagree);
 
-                ShowText();
 
                 nextQuestion = DisplayInteraction.getNextQuestion();
+                ShowText();
 
                 if (guess.confidence >= 0.80f)
                     NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
@@ -138,9 +131,9 @@ public class ChoosingScreen extends Fragment {
 
                 DisplayInteraction.selectOption(nextQuestion,DisplayInteraction.stronglyDisagree);
 
-                ShowText();
 
                 nextQuestion = DisplayInteraction.getNextQuestion();
+                ShowText();
 
                 if (guess.confidence >= 0.80f)
                     NavHostFragment.findNavController(ChoosingScreen.this).navigate(R.id.action_SecondFragment_to_ThirdFragment);
@@ -149,5 +142,6 @@ public class ChoosingScreen extends Fragment {
             }
         });
     }
+
 
 }

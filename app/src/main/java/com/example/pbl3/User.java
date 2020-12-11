@@ -12,20 +12,24 @@ class User {
     int[] problemViewed;
     int[] solutionViewed;
 
+    int questionMin = 0;
+    int problemMin = 0;
+    int solutionMin = 0;
+
     boolean firstTimeUser = false;
 
     User(){
 
         //TODO check if first time opening app
-        firstTimeUser = false; //firstTimeUser = checkFirstTime(); something like that
+        firstTimeUser = true; //firstTimeUser = checkFirstTime(); something like that
 
         if(firstTimeUser){
             questionViewed = new int[QuestionSet.questionsCount];
             problemViewed = new int[ProblemSet.problemsCount];
             solutionViewed = new int[SolutionSet.solutionsCount];
-            //TODO CHECK IF THEH ARRAY ARE BEING INITIALIZED WITH 0, THEY SHOULD NOT BE RANDOM VALUES
         } else{
-        readStateFromFile();
+            //TODO set minimal values to the actual minimal values from the file.
+            //readStateFromFile();
         }
     }
 
@@ -44,9 +48,39 @@ class User {
         //  To file
     }
 
+    void viewQuestion(int id){
+        questionViewed[id]++;
+        questionMin = min(questionViewed);
+    }
+    void viewProblem(int id){
+        problemViewed[id]++;
+        problemMin = min(problemViewed);
+    }
+    void  viewSolution(int id){
+        solutionViewed[id]++;
+        solutionMin = min(solutionViewed);
+    }
+
+    int getQuestionMin(){
+        return this.questionMin;
+    }
+    int getProblemMin(){
+        return this.problemMin;
+    }
+    int getSolutionMin(){
+        return this.solutionMin;
+    }
+
+    int min(int[] arr){
+        int len = arr.length;
+        int ret = arr[0];
+        for(int i = 0; i < len;i++){
+            if(ret == 0) return ret;
+            if(ret > arr[i]){
+                ret = arr[i];
+            }
+        }
+        return ret;
+    }
 }
 
-
-//Http server java and http client
-//Sriu portul si ip-ul la server.
-//rest api library java
