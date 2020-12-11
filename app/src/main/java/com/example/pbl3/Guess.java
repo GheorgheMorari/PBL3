@@ -48,14 +48,14 @@ class Guess extends Problem{
         int questionMin = user.getQuestionMin();
         if(mostProbable == null) return 0;
         for(int i = 0; i < questionsCount; i++){
-            if(Float.isNaN(this.questionAnswers[i]) && user.questionViewed[i] == questionMin &&
+            if(Float.isNaN(this.questionAnswers[i]) || user.questionViewed[i] == questionMin &&
                 ((mostProbable.questionAnswers[i] == DisplayInteraction.stronglyAgree) ||
                 (mostProbable.questionAnswers[i] == DisplayInteraction.stronglyDisagree))){
                 return i;
             }
         }
         for(int i = 0; i < questionsCount; i++){
-            if(Float.isNaN(this.questionAnswers[i]) && user.questionViewed[i] == questionMin){
+            if(Float.isNaN(this.questionAnswers[i]) || user.questionViewed[i] == questionMin){
                 return i;
             }
         }
