@@ -42,7 +42,7 @@ public class SolutionSet {
     List<Solution> getBestSolutions(User user, Problem problem){
         int id  = ProblemSet.getId(problem);
 
-        PriorityQueue<SolutionResult> sortedQueue = new PriorityQueue<SolutionResult>();
+        PriorityQueue<SolutionResult> sortedQueue = new PriorityQueue<SolutionResult>(new SolutionComparator());
         for (Solution solution:solutions) {
             sortedQueue.add(new SolutionResult(solution,id));
         }
@@ -75,7 +75,7 @@ public class SolutionSet {
             }
             float sr2Suitability = -1;
             int sr2Len = sr2.idArray.length;
-            for(int i = 0; i < sr1Len;i++){
+            for(int i = 0; i < sr2Len;i++){
                 if(sr2.idArray[i] == sr2.problem_id){
                     sr2Suitability = sr2.suitabilityIndices[i];
                     break;
