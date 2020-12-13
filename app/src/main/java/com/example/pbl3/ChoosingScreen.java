@@ -25,10 +25,10 @@ import static com.example.pbl3.DisplayInteraction.getNextQuestion;
 public class ChoosingScreen extends Fragment {
 
     //TODO FOR CERLAT PACLIC
-    //Todo Display next question using DisplayInteraction.getNextQuestion();
-    //TODO Answer the question using DisplayInteraction.selectOption(question,button value);
-    //TODO pass the value parameter to the selectOption() as DisplayInteraction.agree
-    //TODO IMPLEMENT SWITCHING TO ENDSCREEN WHEN guess.confidence >= 0.80f;
+    //Todo Change background
+    //Todo change text color add a box
+    //Todo change button position
+
     Question nextQuestion;
 
     private TextView mTextView;

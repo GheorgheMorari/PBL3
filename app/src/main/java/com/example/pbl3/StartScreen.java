@@ -9,6 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+
+//TODO Delete name input
+//TODO Change button text
+//TODO a little  description
+
 public class StartScreen extends Fragment {
 
     @Override

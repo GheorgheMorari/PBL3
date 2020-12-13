@@ -55,26 +55,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Please enter your name"
+                android:text="Unsure of what your moods mean? Mad-Wolrd offers a mental health assessment that can help you make the judgment call about exploring professional treatment. "
                 android:textColor="#7A8089"
                 android:textSize="16sp"
+                android:padding="16dp"
                 />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                >
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Name"
-                    android:textColor="#363A43"
-                    android:textColorHint="#7A8089"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
 
@@ -83,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_corners"
                 android:gravity="center"
-                android:text="@string/next"
+                android:text="Let's begin"
 
                 >
 
