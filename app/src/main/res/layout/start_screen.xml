@@ -22,7 +22,6 @@
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
         android:textAllCaps="true"
-        android:textColor="@android:color/background_light"
         />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -47,7 +46,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Welcome"
-                android:textColor="#363A43"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 />
